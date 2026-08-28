@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>WooGit — Liquid Glass V1 UI Reference</title>
-<style>  :root{
+<style>
+  :root{
     --bg-base:#EFF1F7;--blob-mint:#BEEFDC;--blob-peach:#FFE1C2;--blob-lavender:#D8CEFF;--blob-sky:#C6E6FF;
     --glass-fill:rgba(255,255,255,.52);--glass-fill-strong:rgba(255,255,255,.72);--glass-border:rgba(255,255,255,.65);
     --glass-shadow:0 8px 32px rgba(31,36,48,.10),0 1.5px 0 rgba(255,255,255,.6) inset;
@@ -41,11 +42,17 @@
   .navbar{margin:0 16px 16px;padding:10px 8px;background:var(--glass-fill-strong);border:1px solid var(--glass-border);border-radius:22px;backdrop-filter:blur(26px) saturate(160%);-webkit-backdrop-filter:blur(26px) saturate(160%);box-shadow:var(--glass-shadow);display:flex;justify-content:space-around;align-items:center;flex:0 0 auto;position:sticky;bottom:0;z-index:30}.nav-item{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:11px;font-weight:600;color:var(--ink-400);position:relative;padding:4px 14px}.nav-item.active{color:var(--accent-1)}.nav-item .nav-icon-wrap{width:32px;height:32px;border-radius:11px;display:flex;align-items:center;justify-content:center}.nav-item.active .nav-icon-wrap{background:rgba(108,92,231,.14)}.nav-badge{position:absolute;top:-2px;inset-inline-end:6px;width:16px;height:16px;border-radius:50%;background:var(--badge);color:#fff;font-size:9px;font-weight:800;display:flex;align-items:center;justify-content:center;border:2px solid var(--bg-base)}
   button{font:inherit;color:inherit;border:0;cursor:pointer}.interactive{transition:transform .18s ease,filter .18s ease,box-shadow .18s ease}.interactive:active{transform:scale(.985);filter:saturate(.95)}.toast{position:fixed;left:16px;right:16px;bottom:92px;z-index:40;background:rgba(27,31,42,.88);color:#fff;border-radius:15px;padding:11px 14px;font-size:12px;text-align:center;opacity:0;transform:translateY(12px);pointer-events:none;transition:.25s ease;backdrop-filter:blur(18px)}.toast.show{opacity:1;transform:translateY(0)}
   @media (prefers-reduced-motion:reduce){.screen{animation:none}.interactive{transition:none}}@media(max-width:430px){.screen{max-width:none}.feed{padding-inline:15px}}
-  /* CONTENT-FIT FIX: cards and controls grow only as much as their content requires. */
+  /* CONTENT-FIT FIX */
   .card,.card--urgent,.card--product{min-height:0!important;height:auto!important}
   .stat-grid{min-height:0!important;height:auto!important}
   .cta{min-height:0!important;height:auto!important}
   .section-label{min-height:0!important;height:auto!important}
+  /* FLOW LAYOUT FIX: every item follows the previous item in normal document flow. */
+  .feed{position:relative;display:flex!important;flex-direction:column!important;align-items:stretch!important;justify-content:flex-start!important;gap:18px!important}
+  .feed > .card,.feed > .section-label{position:relative!important;top:auto!important;bottom:auto!important;left:auto!important;right:auto!important;transform:none!important;flex:0 0 auto!important;align-self:stretch!important;margin-left:0!important;margin-right:0!important}
+  .feed > .section-label{flex:none!important;width:auto!important}
+  .feed > .card{width:100%!important}
+  .card > .row,.card > .stat-grid,.card > .cta{position:relative!important;top:auto!important;bottom:auto!important}
 </style>
 </head>
 <body>
