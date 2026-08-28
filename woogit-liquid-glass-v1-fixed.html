@@ -23,7 +23,7 @@
   .logo .mark svg{width:16px;height:16px}.menu-btn{width:38px;height:38px;border-radius:12px;background:var(--glass-fill);border:1px solid var(--glass-border);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);display:flex;align-items:center;justify-content:center;box-shadow:var(--glass-shadow);flex-shrink:0}
   .screen{width:100%;max-width:430px;height:100dvh;min-height:680px;margin:0 auto;overflow:hidden;position:relative;border-radius:0;background:radial-gradient(circle at 10% 8%,var(--blob-mint) 0%,transparent 38%),radial-gradient(circle at 95% 15%,var(--blob-peach) 0%,transparent 36%),radial-gradient(circle at 15% 92%,var(--blob-lavender) 0%,transparent 40%),radial-gradient(circle at 92% 78%,var(--blob-sky) 0%,transparent 38%),var(--bg-base);background-size:140% 140%;animation:driftBg 22s ease-in-out infinite alternate}
   @keyframes driftBg{0%{background-position:0% 0%,100% 0%,0% 100%,100% 100%,0 0}100%{background-position:6% 4%,94% 6%,4% 94%,96% 92%,0 0}}
-  .app{height:100%;display:flex;flex-direction:column}.statusbar{padding:14px 22px 5px}.statusbar{display:flex;justify-content:space-between;align-items:center}.icons{display:flex;align-items:center;gap:5px}
+  .app{height:100%;display:flex;flex-direction:column}
   .feed{flex:1 1 auto;min-height:0;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;overscroll-behavior-y:contain;padding:12px 18px 32px;display:flex;flex-direction:column;gap:18px;scrollbar-width:none}.feed::-webkit-scrollbar{display:none}
   .section-label{font-size:12.5px;font-weight:700;color:var(--ink-400);text-transform:uppercase;letter-spacing:.06em;margin:3px 4px 2px;display:flex;align-items:center;gap:6px}
   .card{position:relative;background:var(--glass-fill);border:1px solid var(--glass-border);border-radius:var(--radius-lg);backdrop-filter:blur(24px) saturate(160%);-webkit-backdrop-filter:blur(24px) saturate(160%);box-shadow:var(--glass-shadow);padding:20px 18px;overflow:hidden}
@@ -42,12 +42,10 @@
   .navbar{margin:0 16px 16px;padding:10px 8px;background:var(--glass-fill-strong);border:1px solid var(--glass-border);border-radius:22px;backdrop-filter:blur(26px) saturate(160%);-webkit-backdrop-filter:blur(26px) saturate(160%);box-shadow:var(--glass-shadow);display:flex;justify-content:space-around;align-items:center;flex:0 0 auto;position:sticky;bottom:0;z-index:30}.nav-item{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:11px;font-weight:600;color:var(--ink-400);position:relative;padding:4px 14px}.nav-item.active{color:var(--accent-1)}.nav-item .nav-icon-wrap{width:32px;height:32px;border-radius:11px;display:flex;align-items:center;justify-content:center}.nav-item.active .nav-icon-wrap{background:rgba(108,92,231,.14)}.nav-badge{position:absolute;top:-2px;inset-inline-end:6px;width:16px;height:16px;border-radius:50%;background:var(--badge);color:#fff;font-size:9px;font-weight:800;display:flex;align-items:center;justify-content:center;border:2px solid var(--bg-base)}
   button{font:inherit;color:inherit;border:0;cursor:pointer}.interactive{transition:transform .18s ease,filter .18s ease,box-shadow .18s ease}.interactive:active{transform:scale(.985);filter:saturate(.95)}.toast{position:fixed;left:16px;right:16px;bottom:92px;z-index:40;background:rgba(27,31,42,.88);color:#fff;border-radius:15px;padding:11px 14px;font-size:12px;text-align:center;opacity:0;transform:translateY(12px);pointer-events:none;transition:.25s ease;backdrop-filter:blur(18px)}.toast.show{opacity:1;transform:translateY(0)}
   @media (prefers-reduced-motion:reduce){.screen{animation:none}.interactive{transition:none}}@media(max-width:430px){.screen{max-width:none}.feed{padding-inline:15px}}
-  /* CONTENT-FIT FIX */
   .card,.card--urgent,.card--product{min-height:0!important;height:auto!important}
   .stat-grid{min-height:0!important;height:auto!important}
   .cta{min-height:0!important;height:auto!important}
   .section-label{min-height:0!important;height:auto!important}
-  /* FLOW LAYOUT FIX: every item follows the previous item in normal document flow. */
   .feed{position:relative;display:flex!important;flex-direction:column!important;align-items:stretch!important;justify-content:flex-start!important;gap:18px!important}
   .feed > .card,.feed > .section-label{position:relative!important;top:auto!important;bottom:auto!important;left:auto!important;right:auto!important;transform:none!important;flex:0 0 auto!important;align-self:stretch!important;margin-left:0!important;margin-right:0!important}
   .feed > .section-label{flex:none!important;width:auto!important}
@@ -57,7 +55,6 @@
 </head>
 <body>
 <div class="screen" id="screen">
-  <div class="statusbar"><span id="clock">۹:۴۱</span><div class="icons"><svg class="icon" viewBox="0 0 24 24" style="width:15px;height:15px;color:var(--ink-900)"><path d="M2 18h2v3H2zM7 14h2v7H7zM12 10h2v11h-2zM17 6h2v15h-2z"/></svg><svg class="icon" viewBox="0 0 24 24" style="width:15px;height:15px;color:var(--ink-900)"><path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/></svg><svg class="icon" viewBox="0 0 24 24" style="width:20px;height:14px;color:var(--ink-900)"><rect x="1" y="6" width="18" height="12" rx="2"/><line x1="23" y1="10" x2="23" y2="14"/><rect x="3" y="8" width="13" height="8" fill="currentColor" stroke="none"/></svg></div></div>
   <div class="app">
     <div class="topbar"><div class="logo"><span class="mark"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12L10 18L20 6" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>ووگیت<span class="header-status-inline"><span class="status-dot"></span>فروشگاه متصل است</span></div><div class="menu-btn"><svg class="icon" viewBox="0 0 24 24" style="color:var(--ink-900)"><path d="M4 7h16M4 12h16M4 17h16"/></svg></div></div>
     <div class="feed">
@@ -77,11 +74,8 @@
   </div>
 </div>
 <script>
-const faDigits=n=>String(n).replace(/\d/g,d=>'۰۱۲۳۴۵۶۷۸۹'[d]);
-function updateClock(){const d=new Date(),c=document.getElementById('clock');if(c)c.textContent=faDigits(String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0'))}
 function showToast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');clearTimeout(window.__toast);window.__toast=setTimeout(()=>t.classList.remove('show'),1800)}
 function setNav(el,label){document.querySelectorAll('.nav-item').forEach(x=>x.classList.remove('active'));el.classList.add('active');showToast(label)}
-updateClock();setInterval(updateClock,30000);
 </script>
 </body>
 </html>
